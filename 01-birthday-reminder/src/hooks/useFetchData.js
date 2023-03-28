@@ -1,8 +1,9 @@
-import React from 'react'
+import { useState } from 'react';
+import { data } from '../helper/data';
 
 const useFetchData = () => {
+    const [mydata, setMyData] = useState(data)
 
-    
-    return {}
+    return { mydata, setMyData }
 }
 export default useFetchData
