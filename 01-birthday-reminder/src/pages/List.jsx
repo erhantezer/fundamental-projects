@@ -1,4 +1,3 @@
-import useFetchData from "../hooks/useFetchData";
 
 
 const List = ({myData}) => {
