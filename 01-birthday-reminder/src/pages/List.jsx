@@ -9,7 +9,7 @@ const List = ({myData}) => {
             {myData.map((person) => {
                 const { id, name, image, age } = person;
                 return (
-                    <article key={id}>
+                    <article key={id} className="person">
                         <img src={image} alt={name} />
                         <div>
                             <h4>{name}</h4>
