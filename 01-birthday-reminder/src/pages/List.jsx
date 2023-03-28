@@ -1,9 +1,14 @@
-import React from 'react'
+import useFetchData from "../hooks/useFetchData";
+
 
 const List = () => {
-  return (
-    
-  )
+    const { myData, setMyData } = useFetchData();
+
+    return (
+        <>
+        
+        </>
+    )
 }
 
 export default List
