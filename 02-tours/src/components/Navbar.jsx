@@ -112,7 +112,7 @@ function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <img width={"84px"} style={{ borderRadius: "5px" }} src={alpata} alt="" />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
