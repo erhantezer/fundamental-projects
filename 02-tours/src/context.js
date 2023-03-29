@@ -21,6 +21,8 @@ export const AppContextProvider = ({ children }) => {
         }
     }
 
+    console.log(tours)
+
     useEffect(() => {
         fetchTours()
     }, []);
