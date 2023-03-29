@@ -28,8 +28,8 @@ export const AppContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <AppContextProvider value={{ tours, setTours }}>
+        <AppContext.Provider value={{ tours, setTours }}>
             {children}
-        </AppContextProvider>
+        </AppContext.Provider>
     )
 }
