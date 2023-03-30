@@ -1,8 +1,11 @@
-import React from 'react'
+import data from '../helper/data';
 
 const Review = () => {
+    console.log(data)
     return (
-        <div>Review</div>
+        <article className='review'>
+
+        </article>
     )
 }
 
