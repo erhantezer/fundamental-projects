@@ -1,7 +1,7 @@
-import data from '../helper/data';
+import people from '../helper/data';
 
 const Review = () => {
-    console.log(data)
+    console.log(people)
     return (
         <article className='review'>
 
