@@ -123,4 +123,40 @@ export default Tours
 
 ```
 
-
+### Tours Project's Tree
+```readme
+│   .gitignore
+│   package.json
+│   README.md
+│   yarn.lock
+│
+├───public
+│       favicon.ico
+│       index.html
+│       logo192.png
+│       logo512.png
+│       manifest.json
+│       robots.txt
+│
+└───src
+    │   App.js
+    │   context.js
+    │   index.css
+    │   index.js
+    │
+    ├───assets
+    │       alpata.png
+    │       octapull.png
+    │       octapull1.png
+    │
+    ├───components
+    │       Footer.jsx
+    │       Navbar.jsx
+    │
+    ├───hooks
+    │       useRemoveTour.js
+    │
+    └───pages
+            Tour.jsx
+            Tours.jsx
+```
