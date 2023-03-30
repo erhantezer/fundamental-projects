@@ -167,7 +167,16 @@ section {
 }
 
 main {
-  width: 90vw;
-  max-width: var(--fixed-width);
-  margin: 8rem auto;
+    width: 90vw;
+    max-width: var(--fixed-width);
+    margin: 8rem auto;
+}
+
+.loading {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 4rem;
 }
