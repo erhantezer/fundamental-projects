@@ -28,7 +28,7 @@ export const AppContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <AppContext.Provider value={{ tours, setTours }}>
+        <AppContext.Provider value={{ tours, setTours, fetchTours }}>
             {children}
         </AppContext.Provider>
     )

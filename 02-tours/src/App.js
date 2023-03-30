@@ -5,17 +5,30 @@ import { useGlobalContext } from "./context";
 
 function App() {
 
-  const { tours } = useGlobalContext()
+  const { tours, fetchTours } = useGlobalContext()
 
   const Tours = lazy(() => import("./pages/Tours"))
 
   return (
     <>
+    {tours.length === 0 ? (
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <button className="btn" onClick={() => fetchTours() }>
+            refresh
+          </button>
+        </div>
+      </main>
+    ) : (
+    <main>
       <Navbar />
       <Suspense fallback={<div>Loading.....</div>}>
         <Tours />
       </Suspense>
       <Footer />
+    </main>
+    )}
     </>
   );
 }
