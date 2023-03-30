@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Review from "./pages/Review";
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         </section>
       </main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
