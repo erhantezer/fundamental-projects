@@ -21,13 +21,13 @@ function App() {
         </div>
       </main>
     ) : (
-    <main>
+    <>
       <Navbar />
       <Suspense fallback={<div>Loading.....</div>}>
         <Tours />
       </Suspense>
       <Footer />
-    </main>
+    </>
     )}
     </>
   );
