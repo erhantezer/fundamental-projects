@@ -1,12 +1,12 @@
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary bg-danger p-3">
             <div className="container-fluid">
-                <NavLink className="navbar-brand" href="#">
+                <a className="navbar-brand" href="#">
                     Navbar
-                </NavLink>
+                </a>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -21,17 +21,17 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link active" aria-current="page" href="#">
+                            <a className="nav-link active" aria-current="page" href="#">
                                 Home
-                            </NavLink>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" href="#">
+                            <a className="nav-link" href="#">
                                 Link
-                            </NavLink>
+                            </a>
                         </li>
                         <li className="nav-item dropdown">
-                            <NavLink
+                            <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
                                 role="button"
@@ -39,25 +39,25 @@ const Navbar = () => {
                                 aria-expanded="false"
                             >
                                 Dropdown
-                            </NavLink>
+                            </a>
                             <ul className="dropdown-menu">
                                 <li>
-                                    <NavLink className="dropdown-item" href="#">
+                                    <a className="dropdown-item" href="#">
                                         Action
-                                    </NavLink>
+                                    </a>
                                 </li>
                                 <li>
-                                    <NavLink className="dropdown-item" href="#">
+                                    <a className="dropdown-item" href="#">
                                         Another action
-                                    </NavLink>
+                                    </a>
                                 </li>
                                 <li>
                                     <hr className="dropdown-divider" />
                                 </li>
                                 <li>
-                                    <NavLink className="dropdown-item" href="#">
+                                    <a className="dropdown-item" href="#">
                                         Something else here
-                                    </NavLink>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
