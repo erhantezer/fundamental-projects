@@ -1,10 +1,15 @@
+import { Suspense, lazy } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Review from "./pages/Review";
 import { ToastContainer } from 'react-toastify';
 
 
+
 function App() {
+
+  const Review = lazy(() => import("./pages/Review"))
+
+
   return (
     <div>
       <Navbar/>
@@ -14,8 +19,11 @@ function App() {
             <h2>our reviews</h2>
             <div className='underline'></div>
           </div>
-          <Review />
+          <Suspense fallback={<div>Loading....</div>}>
+              <Review/>
+          </Suspense>
         </section>
+        
       </main>
       <Footer />
       <ToastContainer />
