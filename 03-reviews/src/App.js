@@ -23,7 +23,6 @@ function App() {
               <Review/>
           </Suspense>
         </section>
-        
       </main>
       <Footer />
       <ToastContainer />
