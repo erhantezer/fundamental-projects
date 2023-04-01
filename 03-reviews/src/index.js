@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import { AppProviderContext } from './context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
+<AppProviderContext>
     <App />
-
+</AppProviderContext>
 );
