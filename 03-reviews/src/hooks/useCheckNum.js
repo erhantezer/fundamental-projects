@@ -1,8 +1,8 @@
-import React from 'react'
+
 import { useGlobalContext } from '../context';
 
 const useCheckNum = () => {
-    const { index, setIndex, name, job, image, text, people } = useGlobalContext();
+    const { people } = useGlobalContext();
     console.log(people)
 
     const checkNumber = (num) => {

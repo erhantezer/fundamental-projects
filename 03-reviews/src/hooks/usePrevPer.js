@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { useGlobalContext } from '../context';
 import useCheckNum from './useCheckNum';
 
 const usePrevPer = () => {
-  const { index, setIndex, name, job, image, text } = useGlobalContext();
+  const { setIndex } = useGlobalContext();
   const { checkNumber } = useCheckNum()
 
   const prevNum = () => {

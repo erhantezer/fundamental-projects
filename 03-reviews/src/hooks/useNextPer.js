@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context';
 import useCheckNum from './useCheckNum';
 
 const useNextPer = () => {
-    const { index, setIndex, name, job, image, text } = useGlobalContext();
+    const { setIndex } = useGlobalContext();
     const { checkNumber } = useCheckNum()
 
     const nextNum = () => {

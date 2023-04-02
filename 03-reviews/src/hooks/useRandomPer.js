@@ -1,12 +1,20 @@
-import React from 'react'
+
 import { useGlobalContext } from '../context';
+import useCheckNum from './useCheckNum';
 
 const useRandomPer = () => {
-    const { index, setIndex, name, job, image, text } = useGlobalContext();
+    const { index, setIndex, people } = useGlobalContext();
+    const {checkNumber} = useCheckNum();
+
+    const randomPerson = () => {
+        let randomNumber = Math.floor(Math.random() * people.length);
+        if(randomNumber === index) {
+            randomNumber = index + 1;
+        };
+        setIndex(checkNumber(randomNumber))
+    }
     
-    return (
-        <div>useRandomPer</div>
-    )
+    return { randomPerson }
 }
 
 export default useRandomPer
