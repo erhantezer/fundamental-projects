@@ -12,7 +12,7 @@ export const AppProviderContext = ({ children }) => {
     const { name, job, image, text } = people[index];
 
     return (
-        <AppContext.Provider value={{ index, setIndex, name, job, image, text }}>
+        <AppContext.Provider value={{ index, setIndex, name, job, image, text, people }}>
             {children}
         </AppContext.Provider>
     )
