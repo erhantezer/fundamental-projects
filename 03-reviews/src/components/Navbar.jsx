@@ -2,7 +2,7 @@
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-danger p-3">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-danger p-3" >
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     Navbar
