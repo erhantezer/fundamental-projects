@@ -2,14 +2,15 @@ import { Suspense, lazy } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from 'react-toastify';
+import { useGlobalContext } from "./context";
 // import { RouterProvider } from "react-router-dom";
 // import { router } from "./router/router";
 
 
 
 function App() {
-
-  const Review = lazy(() => import("./pages/Review"))
+  const { index, setIndex, name, job, image, text } = useGlobalContext();
+  const Review = lazy(() => import("./pages/Review"));
 
 
   return (
