@@ -2,6 +2,8 @@ import { Suspense, lazy } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from 'react-toastify';
+// import { RouterProvider } from "react-router-dom";
+// import { router } from "./router/router";
 
 
 
@@ -12,6 +14,7 @@ function App() {
 
   return (
     <div>
+      {/* <RouterProvider router={router} fallbackElement={<div>Loading...</div>}/> */}
       <Navbar/>
       <main>
         <section className='container'>
