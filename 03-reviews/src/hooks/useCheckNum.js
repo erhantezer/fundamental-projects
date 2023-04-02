@@ -3,7 +3,6 @@ import { useGlobalContext } from '../context';
 
 const useCheckNum = () => {
     const { people } = useGlobalContext();
-    console.log(people)
 
     const checkNumber = (num) => {
         if (num > people.length - 1) {
