@@ -8,7 +8,7 @@ const useCategories = () => {
     const [categories, setCategories] = useState(allCategories);
 
 
-    return {}
+    return { categories, setCategories }
 }
 
 export default useCategories
