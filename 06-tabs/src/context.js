@@ -7,11 +7,12 @@ export const useGlobalContext = () => {
     return useContext(AppContext)
 };
 
-const url = 'https://course-api.com/react-tabs-project';
 
 export const AppContextProvider = ({ children }) => {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
+
+    const url = 'https://course-api.com/react-tabs-project';
 
     const fetchData = async () => {
         setLoading(true)
@@ -19,6 +20,7 @@ export const AppContextProvider = ({ children }) => {
             const response = await fetch(url);
             const newJobs = await response.json()
             // const {data} = await axios(url)
+            console.log(newJobs)
             setJobs(newJobs)
             setLoading(false)
         } catch (error) {
@@ -30,6 +32,8 @@ export const AppContextProvider = ({ children }) => {
     useEffect(() => {
         fetchData()
     }, [])
+
+    console.log(jobs)
 
     return (
         <AppContext.Provider value={{ jobs, loading }}>
