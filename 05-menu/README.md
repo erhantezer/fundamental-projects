@@ -1,70 +1,178 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App.js
 
-## Available Scripts
+ ```js
+ 
 
-In the project directory, you can run:
+import { useGlobalContext } from "./context";
+import Home from "./pages/Home";
+import items from "./helper/data"
 
-### `yarn start`
+function App() {
+const {setMenuItems } = useGlobalContext()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  const filterItems = (category) => {
+    if(category === "all") {
+      setMenuItems(items);
+      return;
+    }
+    const newItems = items.filter((item) => item.category === category);
+    console.log(newItems)
+    setMenuItems(newItems)
+  }
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  return (
+    <>
+      <Home filterItems={filterItems}/>
+    </>
+  );
+}
 
-### `yarn test`
+export default App;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ```
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Home.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ ```js
+ 
+import React from 'react'
+import Categories from '../components/Categories'
+import Menu from '../components/Menu'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const Home = ({ filterItems }) => {
+    return (
+        <main>
+            <section className="menu section">
+                <div className="title">
+                    <h2>our menu</h2>
+                    <div className="underline"></div>
+                </div>
+                <Categories filterItems={filterItems} />
+                <Menu/>
+            </section>
+        </main>
+    )
+}
 
-### `yarn eject`
+export default Home
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Categories.jsx
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ```js
+ 
+import useCategories from '../hooks/useCategories';
 
-## Learn More
+const Categories = ({ filterItems }) => {
+    const {categories} = useCategories();
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    return (
+        <div className="btn-container">
+            {categories.map((category, index) => {
+                return (
+                    <button
+                        type="button"
+                        className="filter-btn"
+                        key={index}
+                        onClick={() => filterItems(category)}
+                    >
+                        {category}
+                    </button>
+                );
+            })}
+        </div>
+    );
+};
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export default Categories;
 
-### Code Splitting
+ ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Menu.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ ```js
 
-### Making a Progressive Web App
+import React from 'react';
+import { useGlobalContext } from '../context';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+const Menu = () => {
+    const { menuItems } = useGlobalContext()
 
-### Advanced Configuration
+    return (
+        <div className='section-center'>
+            {menuItems.map((menuItem) => {
+                const { id, title, img, desc, price } = menuItem;
+                return (
+                    <article key={id} className='menu-item'>
+                        <img src={img} alt={title} className='photo' />
+                        <div className='item-info'>
+                            <header>
+                                <h4>{title}</h4>
+                                <h4 className='price'>${price}</h4>
+                            </header>
+                            <p className='item-text'>{desc}</p>
+                        </div>
+                    </article>
+                );
+            })}
+        </div>
+    );
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export default Menu;
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+ ```
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## useCategories.js
+
+ ```js
+
+import { useState } from "react";
+import items from "../helper/data";
+
+const allCategories = ["all", ...new Set(items.map((item) => item.category))]
+console.log(allCategories)
+
+const useCategories = () => {
+    const [categories, setCategories] = useState(allCategories);
+
+
+    return { categories, setCategories }
+}
+
+export default useCategories
+ 
+ ```
+
+
+## context.js
+
+ ```js
+
+import { createContext, useContext, useState } from "react";
+import items from './helper/data';
+
+const AppContext = createContext();
+
+export const useGlobalContext = () => {
+    return useContext(AppContext);
+};
+
+export const AppContextProvider = ({children}) => {
+    const [menuItems, setMenuItems] = useState(items);
+
+    return (
+        <AppContext.Provider value={{ menuItems, setMenuItems }}>
+                {children}
+            </AppContext.Provider>
+        );
+}
+
+ ```
