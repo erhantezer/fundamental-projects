@@ -1,6 +1,9 @@
+import { useGlobalContext } from "./context";
 
 
 function App() {
+  const {jobs, loading} = useGlobalContext();
+
   return (
     <section className="section">
       <div className="title">
