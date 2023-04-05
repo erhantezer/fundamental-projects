@@ -2,12 +2,10 @@ import { useState } from "react";
 import { useGlobalContext } from "./context";
 import { FaAngleDoubleRight } from 'react-icons/fa';
 
-
 function App() {
   const { jobs, loading } = useGlobalContext();
   const [value, setValue] = useState(0);
   console.log(jobs)
-
 
   if (loading) {
     return (
@@ -16,7 +14,6 @@ function App() {
       </section>
     )
   }
-
 
   const { company, dates, duties, title } = jobs[value] || []; //! jobs başta boş geldiği için boşsa boş array döndür dedim hatayı kaldırmak için
   //! short cut yöntemleri önemli
