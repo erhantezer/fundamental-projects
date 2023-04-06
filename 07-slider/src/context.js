@@ -8,7 +8,7 @@ export const useGlobalContext = () => {
 };
 
 export const AppContextProvider = ({children}) => {
-    const [peopel, setPeopel] = useState(data);
+    const [people, setPeople] = useState(data);
 
     return(
             <AppContext.Provider value={{}}>
