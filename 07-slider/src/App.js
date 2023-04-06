@@ -1,4 +1,5 @@
-
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { FaQuoteRight } from 'react-icons/fa';
 
 function App() {
   return (
