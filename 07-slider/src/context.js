@@ -11,7 +11,7 @@ export const AppContextProvider = ({children}) => {
     const [people, setPeople] = useState(data);
 
     return(
-            <AppContext.Provider value={{}}>
+        <AppContext.Provider value={{ people, setPeople }}>
                 {children}
             </AppContext.Provider>
         )
