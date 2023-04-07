@@ -8,7 +8,7 @@ function App() {
 
   return (
     <section className="section-center">
-
+      <h3>tired of boring lorem ipsum?</h3>
     </section>
   );
 }
