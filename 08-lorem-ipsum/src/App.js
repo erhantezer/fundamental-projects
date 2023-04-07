@@ -1,10 +1,11 @@
 
 
 function App() {
-  return (
-    <div>
   
-    </div>
+  return (
+    <section className="section-center">
+
+    </section>
   );
 }
 
