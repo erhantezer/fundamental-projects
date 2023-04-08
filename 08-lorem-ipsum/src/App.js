@@ -2,7 +2,6 @@ import { useState } from "react";
 import data from "./helper/data"
 
 
-
 function App() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
