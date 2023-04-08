@@ -1,4 +1,6 @@
 
+# Slider
+
 ## App.js
 ```js
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
