@@ -21,11 +21,9 @@ const {people, setPeople} = useGlobalContext();
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-      console.log("hanigökbörü")
     },5000)
     return () => {
       clearInterval(slider)
-      console.log("erhan")
     };
   }, [index]);
 
