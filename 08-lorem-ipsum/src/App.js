@@ -4,7 +4,7 @@ import data from "./helper/data"
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [text, setText] = useState([]);
 
   const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ function App() {
       <article className="lorem-text">
       {text.map((item, index) => {
         return (
-            <p key={index}>{item}</p>
+          <p key={index}><span>{`${index + 1}-)`}</span> {item}</p>
           )
       })}
       </article>
