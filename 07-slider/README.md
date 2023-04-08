@@ -1,6 +1,5 @@
 
 ## App.js
-
 ```js
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaQuoteRight } from 'react-icons/fa';
@@ -198,14 +197,12 @@ export default Alternative
 
 
 ## index.css
-
 ```css
 /*
 =============== 
 Variables
 ===============
 */
-
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(21, 91%, 17%);
