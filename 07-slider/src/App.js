@@ -17,6 +17,19 @@ const {people, setPeople} = useGlobalContext();
     }
   }, [index,people]);
 
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+      console.log("hanigökbörü")
+    },5000)
+    return () => {
+      clearInterval(slider)
+      console.log("erhan")
+    };
+  }, [index]);
+
+
   console.log(index)
   return (
     <section className="section">
