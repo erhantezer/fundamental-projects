@@ -8,6 +8,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    try {
+      
+    } catch (error) {
+      setError(true)
+      console.log(error)
+    }
   }
 
   return (
@@ -29,7 +35,7 @@ function App() {
         </form>
       </section>
       <section>
-        
+
       </section>
   </>
 
