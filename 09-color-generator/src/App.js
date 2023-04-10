@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Values from 'values.js'
+import SingleColor from "./pages/SingleColor";
 
 function App() {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
-  const [list, setList] = useState("");
-
+  const [list, setList] = useState(new Values('#f15025').all(10)); //! array içinde objeler
+  console.log(list)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ function App() {
       console.log(error)
     }
   }
+
 
   return (
   <>
@@ -37,7 +39,11 @@ function App() {
         </form>
       </section>
       <section>
-
+        {list.map((color, index) => {
+          return (
+              <SingleColor key={index} {...color} index={index} hexColor={color.hex} />
+            )
+        })}
       </section>
   </>
 
