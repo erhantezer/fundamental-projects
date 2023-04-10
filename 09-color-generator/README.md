@@ -1,15 +1,5 @@
 # values.js
 
-[![NPM Version][npm-image]][npm-url]
-[![Minzipped size][bundlephobia-image]][bundlephobic-url]
-[![License][license-image]][license-url]
-![][github-actions-nodejs-image]
-[![codecov][codecov-image]][codecov-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
-[![Libraries.io dependency status for latest release][librariesio-img]][librariesio-url]
-[![Total alerts][lgtm-image]][lgtm-url]
-[![Language grade: JavaScript][lgtm-grade-image]][lgtm-grade-url]
-
 Get tints and shades of a CSS color
 
 > _The lightness or darkness of a color is called its value.
@@ -84,6 +74,145 @@ Values {
   getBrightness: ƒ getBrightness()
 }
 ```
+
 See [tests](https://github.com/noeldelgado/values.js/tree/master/test) for more cases.
 
 
+## App.js
+
+```js
+import { useState } from "react";
+import Values from 'values.js'
+import SingleColor from "./pages/SingleColor";
+import { toastErrorNotify } from "./helper/toastify";
+
+function App() {
+  const [color, setColor] = useState("");
+  const [error, setError] = useState(false);
+  const [list, setList] = useState(new Values('#f15025').all(10)); //! array içinde objeler
+  // console.log(list)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (color === "") {
+      toastErrorNotify("Unable parse color from string")
+    }
+    try {
+      let colors = new Values(color).all(10)
+      setList(colors)
+    } catch (error) {
+      setError(true)
+      console.log(error)
+    }
+  }
+
+
+  return (
+    <>
+      <section className="container">
+        <h3>color genrator</h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="color"
+            id="color"
+            placeholder="#f15025"
+            onChange={(e) => setColor(e.target.value)}
+            className={`${error ? 'error' : null}`}
+          />
+          <button className="btn">
+            submit
+          </button>
+        </form>
+      </section>
+      <section className="colors">
+        {list.map((color, index) => {
+          return (
+            <SingleColor key={index} {...color} index={index} hexColor={color.hex} />
+          )
+        })}
+      </section>
+    </>
+
+  );
+}
+
+export default App;
+
+```
+
+## SingleColor.jsx
+
+```js
+import rgbToHex from "../utils/utils";
+import { toastSuccessNotify } from "../helper/toastify";
+
+const SingleColor = ({ rgb, weight, index, hexColor }) => {
+    const bcg = rgb.join(",") //! array olana join ile virgül le ayırarak string yaptık
+    // console.log(bcg)
+    const hexValue = `#${hexColor}`
+    // console.log(hexValue)
+    const hex = rgbToHex(...rgb)
+
+    return (
+        <article
+            className={`color ${index > 10 && 'color-light'}`}
+            style={{ backgroundColor: `rgb(${bcg})` }}
+            onClick={() => {
+                toastSuccessNotify("Color copied to clipboard")
+                navigator.clipboard.writeText(hexValue) //! kopyalama işlemi yapar
+            }}
+        >
+            <p className="percent-value">{weight}%</p>
+            <p className="color-value">{hexValue}</p>
+
+        </article>
+    )
+}
+
+export default SingleColor
+
+```
+
+
+## toasitfy.js
+### import 'react-toastify/dist/ReactToastify.css';
+### import { ToastContainer } from 'react-toastify'; index.js
+
+```js
+import { toast } from 'react-toastify';
+
+export const toastWarnNotify = (msg) => {
+    toast.warn(msg, {
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+};
+
+export const toastSuccessNotify = (msg) => {
+    toast.success(msg, {
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+};
+
+export const toastErrorNotify = (msg) => {
+    toast.error(msg, {
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+};
+
+```

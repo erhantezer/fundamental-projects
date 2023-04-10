@@ -1,18 +1,12 @@
-
 import rgbToHex from "../utils/utils";
 import { toastSuccessNotify } from "../helper/toastify";
 
-
 const SingleColor = ({ rgb, weight, index, hexColor }) => {
-
-
     const bcg = rgb.join(",") //! array olana join ile virgül le ayırarak string yaptık
     // console.log(bcg)
     const hexValue = `#${hexColor}`
     // console.log(hexValue)
     const hex = rgbToHex(...rgb)
-
-
 
     return (
         <article
