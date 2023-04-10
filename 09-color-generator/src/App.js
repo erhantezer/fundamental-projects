@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Values from 'values.js'
 
 function App() {
   const [color, setColor] = useState("");
@@ -9,7 +10,8 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      
+      let colors = new Values(color).all(10)
+      setList(colors)
     } catch (error) {
       setError(true)
       console.log(error)
