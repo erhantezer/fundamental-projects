@@ -1,15 +1,12 @@
-
 import { useGlobalContext } from "./context";
 import Home from "./pages/Home";
 import items from "./helper/data"
 
-
-
 function App() {
-const {setMenuItems } = useGlobalContext()
+  const { setMenuItems } = useGlobalContext()
 
   const filterItems = (category) => {
-    if(category === "all") {
+    if (category === "all") {
       setMenuItems(items);
       return;
     }
@@ -20,7 +17,7 @@ const {setMenuItems } = useGlobalContext()
 
   return (
     <>
-      <Home filterItems={filterItems}/>
+      <Home filterItems={filterItems} />
     </>
   );
 }
