@@ -31,14 +31,14 @@ function App() {
             id="color"
             placeholder="#f15025"
             onChange={(e) => setColor(e.target.value)}
-            className=""
+            className={`${error ? 'error' : null}`}
           />
           <button className="btn">
             submit
           </button>
         </form>
       </section>
-      <section>
+      <section className="colors">
         {list.map((color, index) => {
           return (
               <SingleColor key={index} {...color} index={index} hexColor={color.hex} />
