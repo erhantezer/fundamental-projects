@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Values from 'values.js'
 import SingleColor from "./pages/SingleColor";
+import { toastErrorNotify } from "./helper/toastify";
 
 function App() {
   const [color, setColor] = useState("");
@@ -10,6 +11,9 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(color === "") {
+      toastErrorNotify("Unable parse color from string")
+    }
     try {
       let colors = new Values(color).all(10)
       setList(colors)
