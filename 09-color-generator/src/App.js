@@ -11,7 +11,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(color === "") {
+    if (color === "") {
       toastErrorNotify("Unable parse color from string")
     }
     try {
@@ -25,7 +25,7 @@ function App() {
 
 
   return (
-  <>
+    <>
       <section className="container">
         <h3>color genrator</h3>
         <form onSubmit={handleSubmit}>
@@ -45,11 +45,11 @@ function App() {
       <section className="colors">
         {list.map((color, index) => {
           return (
-              <SingleColor key={index} {...color} index={index} hexColor={color.hex} />
-            )
+            <SingleColor key={index} {...color} index={index} hexColor={color.hex} />
+          )
         })}
       </section>
-  </>
+    </>
 
   );
 }
