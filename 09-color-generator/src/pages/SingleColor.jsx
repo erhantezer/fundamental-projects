@@ -14,7 +14,7 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
     useEffect(() => {
     let timeout = setTimeout(() => {
             setAlert(false)
-        }, 5000);
+        }, 3000);
         return (
             () => clearTimeout(timeout), console.log("will unmount") //! fonksiyon clear yapılınca çalışır component will unmount
                 
@@ -27,7 +27,7 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
         style={{backgroundColor:`rgb(${bcg})`}}
         onClick={() => {
             setAlert(true)
-            navigator.clipboard.writeText(hexValue)
+            navigator.clipboard.writeText(hexValue) //! kopyalama işlemi yapar
         }}
         >
             <p className="percent-value">{weight}%</p>
