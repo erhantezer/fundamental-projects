@@ -6,7 +6,7 @@ function App() {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
   const [list, setList] = useState(new Values('#f15025').all(10)); //! array içinde objeler
-  console.log(list)
+  // console.log(list)
 
   const handleSubmit = (e) => {
     e.preventDefault();
