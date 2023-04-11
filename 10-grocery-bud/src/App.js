@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function App() {
   const [name, setName] = useState("");
+  const [alert, setAlert] = useState({ show: false, mdg: "", type: "" });
 
 
   const handleSubmit = (e) => {
