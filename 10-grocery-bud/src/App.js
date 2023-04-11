@@ -7,6 +7,11 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!name) {
+      setAlert(true, "danger", "please enter value")
+    } else if (name) {
+      
+    }
 
   }
 
