@@ -1,14 +1,24 @@
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+  }
+
   return (
     <section className="section-center">
-      <form className="grocery-form">
+      <form className="grocery-form" onSubmit={handleSubmit}>
         <h3>grocery bud</h3>
         <div className="form-control">
-          <input 
+          <input
             type='text'
             className='grocery'
             placeholder='e.g. eggs'
+            onChange={(e) => setName(e.target.value)}
           />
           <button className="submit-btn">
 
