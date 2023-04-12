@@ -1,3 +1,4 @@
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 
 const List = () => {
