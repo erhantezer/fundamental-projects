@@ -1,8 +1,14 @@
 import { useState } from "react";
 
+const getLocalStore = () => {
+  let list = localStorage.getItem("list")
+  return list ? JSON.parse(list) : []
+}
+
 function App() {
   const [name, setName] = useState("");
   const [alert, setAlert] = useState({ show: false, mdg: "", type: "" });
+  const [list, setList] = useState(getLocalStore);
 
 
   const handleSubmit = (e) => {
