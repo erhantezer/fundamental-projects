@@ -9,6 +9,7 @@ function App() {
   const [name, setName] = useState("");
   const [alert, setAlert] = useState({ show: false, mdg: "", type: "" });
   const [list, setList] = useState(getLocalStore);
+  const [edit, setEdit] = useState(null);
 
 
   const handleSubmit = (e) => {
