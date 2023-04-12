@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import List from "./List";
 
 const getLocalStore = () => {
   let list = localStorage.getItem("list")
@@ -78,6 +79,14 @@ function App() {
           </button>
         </div>
       </form>
+      {list.length > 0 && (
+          <div className="grocery-container">
+            <List items={list} removeItem={removeItem} editItem={editItem} />
+            <button className="clear-btn" onClick={clearList} >
+              clear items
+            </button>
+          </div>
+        )}
     </section>
   );
 }
