@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const getLocalStore = () => {
   let list = localStorage.getItem("list")
@@ -51,6 +51,17 @@ function App() {
     setList(list.filter((item) => item.id !== id));
   };
 
+  const editItem = (id) => {
+    const specificItem = list.find((item) => item.id === id);
+    setIsEditing(true);
+    setEditID(id);
+    setName(specificItem.title);
+  };
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list));
+  }, [list]);
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
@@ -63,7 +74,7 @@ function App() {
             onChange={(e) => setName(e.target.value)}
           />
           <button className="submit-btn">
-
+            {isEditing ? 'edit' : 'submit'}
           </button>
         </div>
       </form>
