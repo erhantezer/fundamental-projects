@@ -28,13 +28,28 @@ function App() {
       setEditID(null);
       setIsEditing(false);
       showAlert(true, 'success', 'value changed')
+    } else {
+      showAlert(true, 'success', 'item added to the list');
+      const newItem = { id: new Date().getTime().toString(), title: name };
+      setList([...list, newItem]);
+      setName('');
     }
 
   }
 
   const showAlert = (show = false, type = "", msg = "") => {
     setAlert({ show, type, msg })
-  }
+  };
+
+  const clearList = () => {
+    showAlert(true, 'danger', 'empty list');
+    setList([]);
+  };
+
+  const removeItem = (id) => {
+    showAlert(true, 'danger', 'item removed');
+    setList(list.filter((item) => item.id !== id));
+  };
 
   return (
     <section className="section-center">
