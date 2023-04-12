@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 
 
 const Alert = () => {
+
+  useEffect(() => {
+    
+    return () => {
+      cleanup
+    };
+  }, [input]);
+
   return (
-    <div>Alert</div>
+    <p className=""></p>
   )
 }
 
