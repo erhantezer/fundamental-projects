@@ -3,12 +3,12 @@ import { useEffect } from "react";
 
 const Alert = () => {
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    return () => {
-      cleanup
-    };
-  }, [input]);
+  //   return () => {
+  //     cleanup
+  //   };
+  // }, [input]);
 
   return (
     <p className=""></p>

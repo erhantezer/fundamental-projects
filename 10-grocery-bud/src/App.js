@@ -9,17 +9,31 @@ function App() {
   const [name, setName] = useState("");
   const [alert, setAlert] = useState({ show: false, mdg: "", type: "" });
   const [list, setList] = useState(getLocalStore);
-  const [edit, setEdit] = useState(null);
+  const [editID, setEditID] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!name) {
-      setAlert(true, "danger", "please enter value")
-    } else if (name) {
-      
+    if (!name) {
+      showAlert(true, "danger", "please enter value")
+    } else if (name && isEditing) {
+      setList(list.map((item) => {
+        if (item.id === editID) {
+          return { ...item, title: name }
+        }
+        return item
+      }))
+      setName("");
+      setEditID(null);
+      setIsEditing(false);
+      showAlert(true, 'success', 'value changed')
     }
 
+  }
+
+  const showAlert = (show = false, type = "", msg = "") => {
+    setAlert({ show, type, msg })
   }
 
   return (
