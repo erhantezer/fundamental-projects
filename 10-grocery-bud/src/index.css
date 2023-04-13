@@ -231,7 +231,7 @@ Grocery List
 }
 
 .grocery {
-    padding: 0.25rem;
+    padding: 0.5rem;
     padding-left: 1rem;
     background: var(--clr-grey-10);
     border-top-left-radius: var(--radius);
@@ -305,7 +305,7 @@ Grocery List
     background: transparent;
     border-color: transparent;
     cursor: pointer;
-    font-size: 0.7rem;
+    font-size: 1.5rem;
     margin: 0 0.15rem;
     transition: var(--transition);
 }
@@ -329,14 +329,14 @@ Grocery List
 .clear-btn {
     text-transform: capitalize;
     width: 10rem;
-    height: 1.5rem;
+    height: 1.8rem;
     display: grid;
     align-items: center;
     background: transparent;
     border-color: transparent;
     color: var(--clr-red-light);
     margin: 0 auto;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     letter-spacing: var(--spacing);
     cursor: pointer;
     transition: var(--transition);
@@ -344,5 +344,7 @@ Grocery List
 }
 
 .clear-btn:hover {
-    color: var(--clr-red-dark);
+    color: var(--clr-grey-1);
+    background-color: burlywood;
+    border-radius: 5px;
 }
