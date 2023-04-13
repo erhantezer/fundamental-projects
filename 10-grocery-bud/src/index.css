@@ -239,7 +239,7 @@ Grocery List
     border-color: transparent;
     font-size: 1rem;
     flex: 1 0 auto;
-    color: var(--clr-grey-5);
+    color: var(--clr-grey-4);
 }
 
 .grocery::placeholder {
@@ -248,7 +248,7 @@ Grocery List
 }
 
 .submit-btn {
-    background: var(--clr-primary-8);
+    background: var(--clr-primary-5);
     border-color: transparent;
     flex: 0 0 5rem;
     display: grid;
