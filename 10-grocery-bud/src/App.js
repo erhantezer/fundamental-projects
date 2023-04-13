@@ -42,16 +42,21 @@ function App() {
   const showAlert = (show = false, type = "", msg = "") => {
     setAlert({ show, type, msg })
   };
+  //! uyarıyı fonksiyon halene getirerek state yapısını burda efektif hale getiriyoruz başka yerlerde de rahatça kullanmak için
+
 
   const clearList = () => {
     showAlert(true, 'danger', 'empty list');
     setList([]);
   };
+  //! listeyi temizlemek için ve bütün array olan yapıyı boşaltmak için silmek için bir fonksiyon yazdık
 
   const removeItem = (id) => {
     showAlert(true, 'danger', 'item removed');
     setList(list.filter((item) => item.id !== id));
   };
+  //! tıklanıldığında sadece o id ye sahip değer hariç olanları tekrar listeye aktaran filtreleme yaptık
+  
 
   const editItem = (id) => {
     const specificItem = list.find((item) => item.id === id);
