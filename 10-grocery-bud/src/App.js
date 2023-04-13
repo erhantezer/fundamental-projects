@@ -9,7 +9,7 @@ const getLocalStore = () => {
 
 function App() {
   const [name, setName] = useState("");
-  const [alert, setAlert] = useState({ show: false, mdg: "", type: "" });
+  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const [list, setList] = useState(getLocalStore);
   const [editID, setEditID] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
