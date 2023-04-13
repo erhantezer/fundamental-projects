@@ -42,7 +42,8 @@ function App() {
   const showAlert = (show = false, type = "", msg = "") => {
     setAlert({ show, type, msg })
   };
-  //! uyarıyı fonksiyon halene getirerek state yapısını burda efektif hale getiriyoruz başka yerlerde de rahatça kullanmak için
+  //! uyarıyı fonksiyon halene getirerek state yapısını burda efektif 
+  //! hale getiriyoruz başka yerlerde de rahatça kullanmak için
 
 
   const clearList = () => {
@@ -56,7 +57,7 @@ function App() {
     setList(list.filter((item) => item.id !== id));
   };
   //! tıklanıldığında sadece o id ye sahip değer hariç olanları tekrar listeye aktaran filtreleme yaptık
-  
+
 
   const editItem = (id) => {
     const specificItem = list.find((item) => item.id === id);
@@ -64,10 +65,13 @@ function App() {
     setEditID(id);
     setName(specificItem.title);
   };
+  //! edit butonuna basılınca gönderilen id ile find yapılan id eşleşen title ını 
+  //! name olarak setliyoruz yani imputa geri gönderiyoruz
 
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list));
   }, [list]);
+  //! list state ti her değiştiğinde localstorage ye list adında yeni veri girer
 
   return (
     <section className="section-center">
