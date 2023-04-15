@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import logo from "../logo.svg";
 import { FaBars } from "react-icons/fa";
-import { links, social } from "../helper/data"
+import { links, social } from "../helper/data";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -9,7 +9,10 @@ const Navbar = () => {
     const linksRef = useRef(null)
 
     useEffect(() => {
-        const linksHeight = linksRef.current.getBoundingClientRect().height;
+        const linksHeight = linksRef.current.getBoundingClientRect().height; 
+        console.log(linksHeight)
+        //! Bir öğenin boyutunu ve görüntü alanına göre konumunu döndürür
+        // const linksHeight = 168;
         show ? (linksContainerRef.current.style.height = `${linksHeight}px`) :
             (linksContainerRef.current.style.height = "0px");
     }, [show]);

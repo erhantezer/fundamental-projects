@@ -187,18 +187,22 @@ nav {
 }
 
 .links a {
-    color: var(--clr-grey-3);
+    color: var(--clr-grey-1);
+    margin: 0.5rem;
     font-size: 1rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
     display: block;
     padding: 0.5rem 1rem;
     transition: var(--transition);
+    text-align: center;
+    background-color:var(--clr-primary-7 );
 }
 
 .links a:hover {
     background: var(--clr-primary-8);
-    color: var(--clr-primary-5);
+    color: var(--clr-primary-1);
+    font-weight: 600;
     padding-left: 1.5rem;
 }
 
@@ -245,6 +249,7 @@ nav {
     .links a {
         padding: 0;
         margin: 0 0.5rem;
+        background-color: #fff;
     }
 
     .links a:hover {
