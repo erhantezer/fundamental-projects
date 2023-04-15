@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import logo from "../logo.svg";
 import { FaBars } from "react-icons/fa";
 import { links, social } from "../helper/data"
@@ -7,6 +7,10 @@ const Navbar = () => {
     const [show, setShow] = useState(false);
     const linksContainerRef = useRef(null)
     const linksRef = useRef(null)
+
+    useEffect(() => {
+    
+    }, []);
 
     return (
         <nav>

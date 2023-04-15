@@ -254,6 +254,7 @@ nav {
 
     .social-icons {
         display: flex;
+        font-size: 1.8rem;
     }
 
     .social-icons a {
