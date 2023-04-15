@@ -255,6 +255,8 @@ nav {
     .links a:hover {
         padding: 0;
         background: transparent;
+        color: var(--clr-primary-5);
+        font-weight: 400;
     }
 
     .social-icons {
