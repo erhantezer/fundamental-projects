@@ -1,8 +1,18 @@
-import React from 'react'
+import { useGlobalContext } from "../context";
+import { links, social } from "../helper/data";
 
 const Sidebar = () => {
+    const { isSidebar, closeSidebar } = useGlobalContext();
+
     return (
-        <div>Sidebar</div>
+        <aside>
+            <div>
+                <img src="" alt="" />
+                <button>
+                    
+                </button>
+            </div>
+        </aside>
     )
 }
 
