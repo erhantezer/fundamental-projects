@@ -12,19 +12,23 @@ export const AppProvider = ({ children }) => {
     const [isModal, setIsModal] = useState(false);
 
     const openSidebar = () => {
-        setIsSidebar(true)
+        setIsSidebar(true);
+        console.log("open sidebar")
     };
 
     const closeSidebar = () => {
         setIsSidebar(false)
+        console.log("close sidebar")
     };
 
     const openModal = () => {
         setIsModal(true)
+        console.log("open modal")
     };
 
     const closeModal = () => {
         setIsModal(false)
+        console.log("close modal")
     };
 
 
