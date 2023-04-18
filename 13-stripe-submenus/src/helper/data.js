@@ -4,9 +4,9 @@ const sublinks = [
   {
     page: 'products',
     links: [
-      { label: 'payment', icon: <FaCreditCard />, url: '/products' },
-      { label: 'terminal', icon: <FaCreditCard />, url: '/products' },
-      { label: 'connect', icon: <FaCreditCard />, url: '/products' },
+      { label: 'payment', icon: <FaCreditCard/>, url: '/products' },
+      { label: 'terminal', icon: <FaCreditCard/>, url: '/products' },
+      { label: 'connect', icon: <FaCreditCard/>, url: '/products' },
     ],
   },
   {
