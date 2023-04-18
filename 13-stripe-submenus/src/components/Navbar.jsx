@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 
 
 const Navbar = () => {
+    
     return (
         <nav className='nav'>
             <div className='nav-center'>
