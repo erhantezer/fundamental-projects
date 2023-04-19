@@ -3,7 +3,7 @@ import sublinks from '../helper/data';
 import { FaTimes } from 'react-icons/fa';
 
 const Sidebar = () => {
-    const {sidebar, closeSidebar} = useGlobalContext();
+    const { sidebar, closeSidebar } = useGlobalContext();
 
     return (
         <div className={`${sidebar ? 'sidebar-wrapper show' : 'sidebar-wrapper'}`}>
