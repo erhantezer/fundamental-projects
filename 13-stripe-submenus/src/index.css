@@ -209,7 +209,9 @@ Stripe Styles
     background: transparent;
     border-color: transparent;
     font-size: 1.1rem;
-    /* color: white; */
+    color: white;
+    font-variant: small-caps;
+    font-weight: 600;
     text-transform: capitalize;
     letter-spacing: 1px;
     width: 10rem;
