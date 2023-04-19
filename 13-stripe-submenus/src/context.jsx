@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import sublinks from "./helper/data";
 
 const AppContext = createContext();
@@ -21,7 +21,10 @@ export const AppProvider = ({ children }) => {
         setSidebar(false);
     }
 
-    const openSubmenu = () => {
+    const openSubmenu = (text, coordinates) => {
+        const page = sublinks.find((link) => link.page === text);
+        setPage(page);
+        setLocation(coordinates)
         setSubmenu(true)
     };
 
