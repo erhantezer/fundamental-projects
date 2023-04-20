@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useGlobalContext } from '../context';
 
 const Submenu = () => {
-    const { submenu, page, location } = useGlobalContext();
+    const { submenu, page:{links, page}, location } = useGlobalContext();
     const container = useRef();
     const [colums, setColums] = useState('col-2');
 
@@ -10,8 +10,8 @@ const Submenu = () => {
         setColums("col-2");
         const sub = container.current;
         const { center, bottom } = location;
-        submenu.style.left = `${center}px`;
-        submenu.style.top = `${bottom}px`;
+        sub.style.left = `${center}px`;
+        sub.style.top = `${bottom}px`;
         console.log(links);
         if (links.length === 3) {
             setColums('col-3')
