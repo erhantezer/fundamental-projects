@@ -22,10 +22,11 @@ export const AppProvider = ({ children }) => {
     }
 
     const openSubmenu = (text, coordinates) => {
+        setSubmenu(true)
         const page = sublinks.find((link) => link.page === text);
         setPage(page);
         setLocation(coordinates)
-        setSubmenu(true)
+        
     };
 
     const closeSubmenu = () => {
