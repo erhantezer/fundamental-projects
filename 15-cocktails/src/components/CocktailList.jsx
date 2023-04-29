@@ -2,7 +2,12 @@
 
 const CocktailList = () => {
     return (
-        <div>CocktailList</div>
+        <section className="section">
+            <h2 className="section-title">cocktails</h2>
+            <div className="cocktails-center">
+
+            </div>
+        </section>
     )
 }
 
