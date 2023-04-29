@@ -1,8 +1,10 @@
 
-
 const Loading = () => {
+
+    //! loading işlemini css ile yapacağız
     return (
-        <div>Loading</div>
+        <div className="loader">
+        </div>
     )
 }
 
