@@ -46,6 +46,35 @@ const AppRouter = () => {
 export default AppRouter
 ```
 
+## Navbar.jsx
+```js
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.svg";
+
+const Navbar = () => {
+    return (
+        <nav className="navbar">
+            <div className="nav-center">
+                <NavLink to="/">
+                    <img src={logo} alt="logo" className="logo" />
+                </NavLink>
+                <ul className="nav-links">
+                    <li>
+                        <NavLink to="/">home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="about">about</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    )
+}
+
+export default Navbar;
+```
+
+
 ## context.jsx
 ```js
 import React, { useState, useContext, useEffect } from 'react'
@@ -353,7 +382,22 @@ export default function SingleCocktail() {
 
 ```
 
-##
+## Error.jsx
 ```js
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Error() {
+    return (
+        <section className="error-page section">
+            <div className="error-container">
+                <h1>oops! it's a dead end</h1>
+                <Link to="/" className="btn btn-primary">
+                    back home
+                </Link>
+            </div>
+        </section>
+    );
+}
 
 ```
