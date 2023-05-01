@@ -1,5 +1,44 @@
 # COCKTAILS
 
+## PROJECT STRUCTURE
+```md
+│   .gitignore
+│   index.html
+│   package.json
+│   README.md
+│   vite.config.js
+│   yarn.lock
+│
+├───public
+│       vite.svg
+│
+└───src
+    │   App.jsx
+    │   context.jsx
+    │   index.css
+    │   main.jsx
+    │
+    ├───assets
+    │       logo.svg
+    │
+    ├───components
+    │       Cocktail.jsx
+    │       CocktailList.jsx
+    │       Loading.jsx
+    │       Navbar.jsx
+    │       SearchForm.jsx
+    │
+    ├───pages
+    │       About.jsx
+    │       Error.jsx
+    │       Home.jsx
+    │       SingleCocktail.jsx
+    │
+    └───router
+            AppRouter.jsx
+            PrivateRouter.jsx
+```
+
 ## App.jsx
 ```js
 import AppRouter from "./router/AppRouter";
