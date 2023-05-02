@@ -15,9 +15,12 @@ function App() {
   const [loading, setLoading] = useState()
 
   return (
-    <>
+    <main>
+      <div className=''></div>
+      <div className='block'>
 
-    </>
+      </div>
+    </main>
   )
 }
 
