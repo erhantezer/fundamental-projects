@@ -8,14 +8,14 @@ function App() {
     <main>
       <section className="section">
         <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
+          className="input"
           value={markdown}
           onChange={(e) => setMarkdown(e.target.value)}
         ></textarea>
-        <ReactMarkdown>{markdown}</ReactMarkdown>
+        <article className="result">
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+        </article>
+        
       </section>
     </main>
   )
