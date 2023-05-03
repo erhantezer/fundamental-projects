@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import axios from "axios";
 
 const url = 'https://randomuser.me/api/';
 const defaultImage = 'https://randomuser.me/api/portraits/men/75.jpg';
@@ -10,9 +10,9 @@ const useAll = () => {
     const [value, setValue] = useState("random person");
     const [title, setTitle] = useState("name");
 
-    const fetchPerson = () => {
+    const fetchPerson = async () => {
         try {
-            
+            const {data} = await axios(url)
         } catch (error) {
             console.log(error)
         }
