@@ -1,5 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
+
+const url = 'https://randomuser.me/api/';
+const defaultImage = 'https://randomuser.me/api/portraits/men/75.jpg';
 
 const useAll = () => {
     const [loading, setLoading] = useState(false);
@@ -7,7 +10,19 @@ const useAll = () => {
     const [value, setValue] = useState("random person");
     const [title, setTitle] = useState("name");
 
-return {}
+    const fetchPerson = () => {
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchPerson()
+    }, []);
+
+    return {}
 }
 
 export default useAll
