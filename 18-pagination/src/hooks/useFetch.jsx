@@ -26,4 +26,4 @@ const useFetch = () => {
     return {}
 }
 
-export default useFetch
+export default useFetch;
