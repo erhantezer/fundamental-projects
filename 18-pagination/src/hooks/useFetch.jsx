@@ -1,9 +1,19 @@
-import React from 'react'
+const { createContext, useContext } = require("react");
 
-const useFetch = () => {
+const AppContext = createContext();
+
+
+export const AppProvider = ({children}) => {
     return (
-        <div>useFetch</div>
-    )
+            <AppContext.Provider value={{}}>
+                {children}
+            </AppContext.Provider>
+        )
 }
 
-export default useFetch
+
+
+
+export const useGlobalContext = () => {
+    return useContext(AppContext)
+}
