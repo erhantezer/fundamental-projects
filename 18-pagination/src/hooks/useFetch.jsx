@@ -23,7 +23,7 @@ const useFetch = () => {
         getProducts()
     },[]);
 
-    return {}
+    return { loading, veri }
 }
 
 export default useFetch;
