@@ -1,9 +1,11 @@
-import React from 'react'
+
 
 const Follower = () => {
     
     return (
-        <div>Follower</div>
+        <div>
+
+        </div>
     )
 }
 
