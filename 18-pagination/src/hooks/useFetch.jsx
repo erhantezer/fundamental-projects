@@ -10,8 +10,9 @@ const useFetch = () => {
     const getProducts = async () => {
         setLoading(true)
         try {
-            const response = await fetch();
+            const response = await fetch(url);
             const data = await response.json();
+            
             setVeri(data);
             setLoading(false);
         } catch (error) {
@@ -22,6 +23,24 @@ const useFetch = () => {
     useEffect(() => {
         getProducts()
     },[]);
+
+
+
+    const paginate = (data) => {
+        const itemsPerPage = 10
+        const numberOfPages = Math.ceil(data.length / itemsPerPage)
+
+        const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
+            const start = index * itemsPerPage
+            return data.slice(start, start + itemsPerPage)
+        })
+
+        return newFollowers
+    }
+
+    console.log(paginate)
+
+
 
     return { loading, veri }
 }
