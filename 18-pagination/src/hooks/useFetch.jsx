@@ -30,7 +30,8 @@ const useFetch = () => {
             const response = await fetch(url);
             const data = await response.json();
             
-
+            //! 10 arlı array oluşturmak için kullanılmıştır
+            //(10) [Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10), Array(10)]
             const paginate = (data) => {
                 const itemsPerPage = 10
                 const numberOfPages = Math.ceil(data.length / itemsPerPage)
@@ -44,7 +45,6 @@ const useFetch = () => {
             }
             
             setVeri(paginate(data));
-            console.log(veri)
             setLoading(false);
         } catch (error) {
             
