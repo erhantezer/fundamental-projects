@@ -13,7 +13,21 @@ const useFetch = () => {
             const response = await fetch(url);
             const data = await response.json();
             
-            setVeri(data);
+
+            const paginate = (data) => {
+                const itemsPerPage = 10
+                const numberOfPages = Math.ceil(data.length / itemsPerPage)
+
+                const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
+                    const start = index * itemsPerPage
+                    return data.slice(start, start + itemsPerPage)
+                })
+
+                return newFollowers
+            }
+            
+            setVeri(paginate(data));
+            console.log(veri)
             setLoading(false);
         } catch (error) {
             
@@ -26,19 +40,9 @@ const useFetch = () => {
 
 
 
-    const paginate = (data) => {
-        const itemsPerPage = 10
-        const numberOfPages = Math.ceil(data.length / itemsPerPage)
+    
 
-        const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
-            const start = index * itemsPerPage
-            return data.slice(start, start + itemsPerPage)
-        })
-
-        return newFollowers
-    }
-
-    console.log(paginate)
+    
 
 
 
