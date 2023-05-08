@@ -15,8 +15,19 @@ function App() {
     }
     setFollowers(veri[page])
   }, [loading,page]);
-
   
+  const prevPage = () => {
+    
+  }
+
+  const nextPage = () => {
+    
+  }
+
+  const handlePage = () => {
+    
+  }
+
 
 
   return (
