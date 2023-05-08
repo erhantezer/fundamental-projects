@@ -21,9 +21,6 @@ const useFetch = () => {
     // [1, 3, 5, 7, 9]
 
 
-
-
-
     const getProducts = async () => {
         setLoading(true)
         try {
