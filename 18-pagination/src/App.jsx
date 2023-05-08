@@ -7,10 +7,10 @@ function App() {
   const {loading, veri} = useFetch();
   const [page, setPage] = useState(0);
   const [followers, setFollowers] = useState([]);
-  console.log(veri);
+  
 
   useEffect(() => {
-    if(loading) {
+    if (loading) {
       return <div>Loading...</div>
     }
     setFollowers(veri[page])
@@ -50,7 +50,7 @@ function App() {
       </div>
       <section className="followers">
         <div className="container">
-          {followers.map((follower) => {
+          {followers?.map((follower) => {
             return <Follower key={follower.id} {...follower}/>
           })}
         </div>
