@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useFetch from "./hooks/useFetch";
 import Follower from "./components/Follower";
 
 
 function App() {
-  const {loading, veri} = useFetch()
-  console.log(veri)
+  const {loading, veri} = useFetch();
+  const [page, setPage] = useState(0);
+  const [followers, setFollowers] = useState([]);
+  console.log(veri);
+
+  useEffect(() => {
+    if(loading) {
+      return <div>Loading...</div>
+    }
+
+  }, [loading,page]);
+
+  
+
 
   return (
     <main>
