@@ -24,8 +24,8 @@ function App() {
     
   }
 
-  const handlePage = () => {
-    
+  const handlePage = (index) => {
+    setPage(index)
   }
 
 
