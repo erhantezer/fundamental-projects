@@ -17,7 +17,13 @@ function App() {
   }, [loading,page]);
   
   const prevPage = () => {
-    
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1
+      if (prevPage < 0) {
+        prevPage = data.length - 1
+      }
+      return prevPage
+    })
   }
 
   const nextPage = () => {
