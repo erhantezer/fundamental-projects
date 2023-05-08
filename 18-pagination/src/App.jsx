@@ -10,9 +10,7 @@ function App() {
   
 
   useEffect(() => {
-    if (loading) {
-      return <div>Loading...</div>
-    }
+    
     setFollowers(veri[page])
   }, [loading,page]);
   

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import paginate from '../helpers/utils';
 
 
-const url = 'https://api.github.com/users/john-smilga/followers?per_page=100';
+const url = 'https://api.github.com/users/erhantezer/followers?per_page=100';
 
 const useFetch = () => {
     const [loading, setLoading] = useState(false);
@@ -15,12 +15,14 @@ const useFetch = () => {
             const response = await fetch(url);
             const data = await response.json();
             setVeri(paginate(data))
-            setLoading(false);     
+            setLoading(false); 
+            console.log(veri)    
         } catch (error) {
             console.log(error)
         }
     };
 
+    console.log(loading)
     useEffect(() => {
         getProducts()
     },[]);

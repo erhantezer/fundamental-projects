@@ -1,6 +1,6 @@
 
 
-const Follower = () => {
+const Follower = ({ avatar_url, login, html_url }) => {
     return (
         <article className='card'>
             <img src={avatar_url} alt={login} />
