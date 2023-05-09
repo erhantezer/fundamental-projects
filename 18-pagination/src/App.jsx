@@ -10,7 +10,6 @@ function App() {
   
 
   useEffect(() => {
-    
     setFollowers(veri[page])
   }, [loading,page]);
   
@@ -79,4 +78,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

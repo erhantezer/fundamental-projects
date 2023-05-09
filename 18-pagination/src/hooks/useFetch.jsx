@@ -22,7 +22,7 @@ const useFetch = () => {
         }
     };
 
-    console.log(loading)
+    
     useEffect(() => {
         getProducts()
     },[]);
