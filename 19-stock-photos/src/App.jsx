@@ -1,3 +1,4 @@
+import Photo from "./Photo";
 import { useGlobalContext } from "./context";
 import {FaSearch} from "react-icons/fa";
 
@@ -18,6 +19,12 @@ const handleSubmit = () => {
   e.preventDefault();
 }
 
+if (loading) {
+  return <div style={{textAlign:"center"}}>
+    <h1 className="loading">Loading...</h1>
+    </div>
+}
+
   return (
     <main>
       <section className="search">
@@ -33,6 +40,13 @@ const handleSubmit = () => {
             <FaSearch/>
           </button>
         </form>
+      </section>
+      <section className="photos">
+        <div className="photos-center">
+          {photos?.map((photo, index) => {
+            return <Photo key={index} {...photo}/>
+          })}
+        </div>
       </section>
     </main>
   )
