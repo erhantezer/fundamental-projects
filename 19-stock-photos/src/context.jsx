@@ -12,7 +12,7 @@ const clientID = `?client_id=-WsG44wZbP_-YsLll3ho70imGuxqUSGtc2kbBajE7Bc`;
 const mainUrl = `https://api.unsplash.com/photos/`;
 const searchUrl = `https://api.unsplash.com/search/photos/`;
 
-export const AppProvider = ({children}) => {
+export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [photos, setPhotos] = useState([]);
@@ -38,11 +38,11 @@ export const AppProvider = ({children}) => {
     }
 
     useEffect(() => {
-    dataFetch()
+        dataFetch()
     }, [page]);
 
-    return(
-            <AppContext.Provider value={{
+    return (
+        <AppContext.Provider value={{
             loading,
             setLoading,
             page,
@@ -52,8 +52,8 @@ export const AppProvider = ({children}) => {
             query,
             setQuery,
 
-            }}>
-                {children}
-            </AppContext.Provider>
-        )
+        }}>
+            {children}
+        </AppContext.Provider>
+    )
 }
