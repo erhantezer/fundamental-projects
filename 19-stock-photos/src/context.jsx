@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 const AppContext = createContext();
@@ -20,15 +20,18 @@ export const AppProvider = ({ children }) => {
 
     const dataFetch = async () => {
         setLoading(true);
-
+        let url;
+        const urlPage = `&page=${page}`;
+        const urlQuery = `&query=${query}`;
         if (query) {
-            const url = `${}${}${}${}`
+            url = `${searchUrl}${clientID}${urlPage}${urlQuery}`
         } else {
-            const url = `${}${}${}`
+            url = `${mainUrl}${clientID}${urlPage}`
         }
         try {
             const res = await fetch(url);
             const data = await res.json();
+            console.log(data)
             setPhotos(data)
             setLoading(false)
 
