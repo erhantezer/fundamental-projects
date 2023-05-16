@@ -1,10 +1,19 @@
+import { useGlobalContext } from "./context"
 
 
 
 const App = () => {
-  const {}
+  const { 
+    loading, 
+    page, 
+    setPage, 
+    photos, 
+    query, 
+    setQury,
+    
+  } = useGlobalContext();
 
-  
+
   return (
     <main>
       <section className="section-center">
