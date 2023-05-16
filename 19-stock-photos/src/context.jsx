@@ -20,9 +20,16 @@ export const AppProvider = ({children}) => {
 
     const dataFetch = async () => {
         setLoading(true);
+
+        if (query) {
+            const url = `${}${}${}${}`
+        } else {
+            const url = `${}${}${}`
+        }
         try {
             const res = await fetch(url);
             const data = await res.json();
+            setPhotos(data)
             setLoading(false)
 
         } catch (error) {
@@ -35,7 +42,17 @@ export const AppProvider = ({children}) => {
     }, [page]);
 
     return(
-            <AppContext.Provider value={{}}>
+            <AppContext.Provider value={{
+            loading,
+            setLoading,
+            page,
+            setPage,
+            photos,
+            setPhotos,
+            query,
+            setQuery,
+
+            }}>
                 {children}
             </AppContext.Provider>
         )

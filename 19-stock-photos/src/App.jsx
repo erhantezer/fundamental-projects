@@ -2,10 +2,15 @@
 
 
 const App = () => {
+  const {}
 
   
   return (
-    <div>App</div>
+    <main>
+      <section className="section-center">
+
+      </section>
+    </main>
   )
 }
 
