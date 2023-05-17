@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Photo from "./Photo";
 import { useGlobalContext } from "./context";
 import { FaSearch } from "react-icons/fa";
@@ -14,10 +15,13 @@ const App = () => {
     dataFetch,
   } = useGlobalContext();
 
-  
+  useEffect(() => {
+    setPage((oldpage) => oldpage + 1)
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!query) return;
     if (page === 1) {
       dataFetch()
     }
