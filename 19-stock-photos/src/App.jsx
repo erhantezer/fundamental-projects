@@ -17,7 +17,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(query)
+    console.log(query);
   }
 
   if (loading) {
@@ -45,6 +45,7 @@ const App = () => {
       <section className="photos">
         <div className="photos-center">
           {photos?.map((photo, index) => {
+          console.log(photo)
             return <Photo key={index} {...photo} />
           })}
         </div>
