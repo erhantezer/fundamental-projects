@@ -54,7 +54,7 @@ export const AppProvider = ({ children }) => {
             setPhotos,
             query,
             setQuery,
-
+            dataFetch
         }}>
             {children}
         </AppContext.Provider>

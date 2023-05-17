@@ -11,7 +11,7 @@ const App = () => {
     photos, 
     query, 
     setQuery,
-    
+    dataFetch,
   } = useGlobalContext();
 
 
