@@ -21,7 +21,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!query) return;
+    if (!query) return;
     if (page === 1) {
       dataFetch()
     }
@@ -54,7 +54,7 @@ const App = () => {
         <div className="photos-center">
           {photos?.map((photo, index) => {
             return <Photo key={index} {...photo} />
-          
+
           })}
         </div>
       </section>

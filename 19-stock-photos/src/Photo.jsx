@@ -9,8 +9,8 @@ const Photo = ({
         portfolio_url,
         profile_image: { medium },
         location,
-        }
-    }) => {
+    }
+}) => {
     return (
         <article className='photo'>
             <img className='photo-grid' src={regular} alt={alt_description} />
