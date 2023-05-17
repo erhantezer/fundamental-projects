@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [photos, setPhotos] = useState([]);
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("cat");
 
     const dataFetch = async () => {
         setLoading(true);
@@ -25,14 +25,23 @@ export const AppProvider = ({ children }) => {
         const urlQuery = `&query=${query}`;
         if (query) {
             url = `${searchUrl}${clientID}${urlPage}${urlQuery}`
+            console.log(url)
         } else {
             url = `${mainUrl}${clientID}${urlPage}`
         }
         try {
             const res = await fetch(url);
             const data = await res.json();
-            console.log(data)
-            setPhotos(data)
+            // console.log(data)
+            setPhotos((oldPhotos) => {
+                if (query && page === 1) {
+                    return data.results;
+                } else if (query) {
+                    return [...oldPhotos, ...data.results];
+                } else {
+                    return [...oldPhotos, ...data];
+                }
+            });
             setLoading(false)
 
         } catch (error) {
@@ -43,6 +52,7 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         dataFetch()
     }, [page]);
+
 
     return (
         <AppContext.Provider value={{

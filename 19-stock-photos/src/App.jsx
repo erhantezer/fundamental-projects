@@ -14,10 +14,14 @@ const App = () => {
     dataFetch,
   } = useGlobalContext();
 
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(query);
+    if (page === 1) {
+      dataFetch()
+    }
+    setPage(1)
   }
 
   if (loading) {
@@ -45,8 +49,8 @@ const App = () => {
       <section className="photos">
         <div className="photos-center">
           {photos?.map((photo, index) => {
-          console.log(photo)
             return <Photo key={index} {...photo} />
+          
           })}
         </div>
       </section>
