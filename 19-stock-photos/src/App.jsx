@@ -15,8 +15,9 @@ const App = () => {
   } = useGlobalContext();
 
 
-const handleSubmit = () => {
+const handleSubmit = (e) => {
   e.preventDefault();
+  console.log(query)
 }
 
 if (loading) {
