@@ -1,12 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-
 const AppContext = createContext();
 
 export const useGlobalContext = () => {
     return useContext(AppContext)
 };
-
 
 const clientID = `?client_id=-WsG44wZbP_-YsLll3ho70imGuxqUSGtc2kbBajE7Bc`;
 const mainUrl = `https://api.unsplash.com/photos/`;
