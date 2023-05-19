@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "./data"
 import Article from "./Article";
 
@@ -7,13 +7,12 @@ const getStorageTheme = () => {
   let theme = "light-theme"
   if (localStorage.getItem("theme")) {
     theme = localStorage.getItem("theme")
-   } 
-   return theme
+  }
+  return theme
 }
 
 function App() {
   const [theme, setTheme] = useState(getStorageTheme());
-
 
   const toggleTheme = () => {
     if (theme === "light-theme") {
@@ -22,6 +21,11 @@ function App() {
       setTheme("light-theme")
     }
   }
+
+  useEffect(()=>{
+    localStorage.setItem("theme", theme);
+    document.documentElement.className = theme;
+  }, [theme])
 
   return (
     <main>
@@ -35,7 +39,7 @@ function App() {
       </nav>
       <section className="articles">
         {data.map((item, index) => {
-          return <Article key={index} {...item}/>
+          return <Article key={index} {...item} />
         })}
       </section>
     </main>
