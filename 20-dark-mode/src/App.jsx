@@ -5,10 +5,10 @@ function App() {
 
 
   const toggleTheme = () => {
-    if () {
-      
+    if (theme === "light-theme") {
+      setTheme("dark-theme")
     } else {
-      
+      setTheme("light-theme")
     }
   }
 
