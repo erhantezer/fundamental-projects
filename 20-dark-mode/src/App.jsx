@@ -2,6 +2,11 @@ import { useState } from "react";
 import data from "./data"
 import Article from "./Article";
 
+
+const getStorageTheme = () => {
+  
+}
+
 function App() {
   const [theme, setTheme] = useState("light-theme");
 
