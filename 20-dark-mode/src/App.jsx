@@ -4,11 +4,15 @@ import Article from "./Article";
 
 
 const getStorageTheme = () => {
-  
+  let theme = "light-theme"
+  if (localStorage.getItem("theme")) {
+    theme = localStorage.getItem("theme")
+   } 
+   return theme
 }
 
 function App() {
-  const [theme, setTheme] = useState("light-theme");
+  const [theme, setTheme] = useState(getStorageTheme());
 
 
   const toggleTheme = () => {
