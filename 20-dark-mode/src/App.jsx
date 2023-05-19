@@ -1,4 +1,6 @@
 import { useState } from "react";
+import data from "./data"
+import Article from "./Article";
 
 function App() {
   const [theme, setTheme] = useState("light-theme");
@@ -23,7 +25,9 @@ function App() {
         </div>
       </nav>
       <section className="articles">
-        { }
+        {data.map((item, index) => {
+          return <Article key={index} {...item}/>
+        })}
       </section>
     </main>
   )

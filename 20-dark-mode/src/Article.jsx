@@ -1,6 +1,6 @@
 
 
-const Article = () => {
+const Article = ({id,title}) => {
     
     return (
         <div>Article</div>
