@@ -11,6 +11,17 @@ const [error, setError] = useState(false);
 const [movies, setMovies] = useState([]);
 const [query, setQuery] = useState("batman");
 
+const fetchMovie = () => {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+useEffect(() => {
+    fetchMovie()
+}, [query]);
 
     return {}
 }
