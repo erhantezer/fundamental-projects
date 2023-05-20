@@ -1,9 +1,14 @@
+import Movies from "../components/Movies";
+import SearchForm from "../components/SearchForm";
 
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <main>
+            <SearchForm/>
+            <Movies/>
+        </main>
     )
 }
 
-export default Home
+export default Home;
