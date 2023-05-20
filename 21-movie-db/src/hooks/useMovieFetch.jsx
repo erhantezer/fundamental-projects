@@ -1,9 +1,10 @@
-import React from 'react'
+
 
 const useMovieFetch = () => {
-    return (
-        <div>useMovieFetch</div>
-    )
+
+
+
+    return {}
 }
 
 export default useMovieFetch
