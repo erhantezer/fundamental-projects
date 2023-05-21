@@ -9,10 +9,11 @@ const [error, setError] = useState(false);
 const [movies, setMovies] = useState([]);
 const [query, setQuery] = useState("batman");
 
-const fetchMovie = () => {
+const fetchMovie = async () => {
     setLoading(true)
     try {
-        
+        const res = await fetch(url)
+        const data = await res.json()
         setLoading(false)
     } catch (error) {
         console.log(error)
