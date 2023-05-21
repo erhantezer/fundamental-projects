@@ -10,10 +10,13 @@ const [movies, setMovies] = useState([]);
 const [query, setQuery] = useState("batman");
 
 const fetchMovie = () => {
+    setLoading(true)
     try {
         
+        setLoading(false)
     } catch (error) {
         console.log(error)
+        setError(true)
     }
 }
 
@@ -21,7 +24,14 @@ useEffect(() => {
     fetchMovie()
 }, [query]);
 
-    return {}
+    return { 
+        loading, 
+        error, 
+        query, 
+        setQuery,
+        movies,
+        setMovies
+    }
 }
 
 export default useMovieFetch
