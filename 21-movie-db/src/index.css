@@ -222,11 +222,13 @@ Movies
     margin: 0 auto;
     padding-bottom: 5rem;
     padding-top: 3rem;
+    
 }
 
 .movie {
     position: relative;
     overflow: hidden;
+    
 }
 
 .movie img {
