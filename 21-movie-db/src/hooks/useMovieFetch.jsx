@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=fcacb142`;
 
 
 const useMovieFetch = () => {
@@ -18,9 +18,11 @@ const useMovieFetch = () => {
             url = `${API_ENDPOINT}`
         }
 
+        console.log(url)
         try {
             const res = await fetch(url)
             const data = await res.json()
+            console.log(data)
             setLoading(false)
         } catch (error) {
             console.log(error)
