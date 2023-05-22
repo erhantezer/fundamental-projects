@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
-const url = 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png';
+
 
 const useMovieFetch = () => {
     const [loading, setLoading] = useState(false);
@@ -11,6 +11,13 @@ const useMovieFetch = () => {
 
     const fetchMovie = async () => {
         setLoading(true)
+        let url;
+        if(query ) {
+            url = `${API_ENDPOINT}&s=${query}`
+        }else {
+            url = `${API_ENDPOINT}`
+        }
+
         try {
             const res = await fetch(url)
             const data = await res.json()
