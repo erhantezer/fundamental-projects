@@ -8,6 +8,9 @@ const SingleMovies = () => {
     const {id} = useParams()
     const {loading, error, movies:movie} = useMovieFetch(`s=${id}`)
     
+
+
+    const { imdbId, Poster: poster, Title: title, Year: year } = movie;
     return (
         <div>SingleMovies</div>
     )
