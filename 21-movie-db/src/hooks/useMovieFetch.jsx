@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=fcacb142`;
 
-const useMovieFetch = ({urlParams}) => {
+const useMovieFetch = (urlParams) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({ show: false, msg: '' });
     const [movies, setMovies] = useState([]);
