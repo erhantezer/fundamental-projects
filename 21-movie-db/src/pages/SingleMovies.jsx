@@ -1,25 +1,13 @@
-import { useEffect } from "react";
+
 import {useParams} from "react-router-dom";
+import useMovieFetch from "../hooks/useMovieFetch";
 
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=fcacb142`;
 
 const SingleMovies = () => {
     const {id} = useParams()
-
-    const fetchData = () => {
-        
-
-        try {
-            
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
-    useEffect(() => {
-        fetchData()
-    }, []);
-
+    const {loading, error, movies:movie} = useMovieFetch(`s=${id}`)
+    
     return (
         <div>SingleMovies</div>
     )
