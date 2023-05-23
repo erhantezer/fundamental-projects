@@ -335,6 +335,19 @@ Single Movie
     letter-spacing: var(--spacing);
 }
 
+.ripple-btn {
+    position:relative;
+    padding: 1em 1.5em;
+    color:#fff;
+    font-size:1.15em;
+    border-radius: 100vmax;
+    background-color: transparent;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 992px) {
     .single-movie {
         grid-template-columns: 1fr 2fr;

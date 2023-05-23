@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-    <button className="btn" onClick={toggleTheme}>
+    <button className="ripple-btn" onClick={toggleTheme}>
       Toggle
     </button>
       <RouterProvider router={router} />
