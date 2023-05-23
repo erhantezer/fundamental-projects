@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=fcacb142`;
 
-const useMovieFetch = () => {
+const useMovieFetch = ({urlParams}) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({ show: false, msg: '' });
     const [movies, setMovies] = useState([]);
@@ -13,7 +13,9 @@ const useMovieFetch = () => {
         let url;
         if (query) {
             url = `${API_ENDPOINT}&s=${query}`
-        } else {
+        }else if(urlParams){
+            url = `${API_ENDPOINT}${urlParams}`
+        }else {
             url = `${API_ENDPOINT}`
         }
 
