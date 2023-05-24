@@ -7,15 +7,14 @@ const useMovieFetch = (urlParams) => {
     const [error, setError] = useState({ show: false, msg: '' });
     const [movies, setMovies] = useState([]);
     
-    console.log(urlParams)
 
     const fetchMovie = async (url) => {
         setLoading(true)
-        console.log(url)
+        
         try {
             const res = await fetch(url)
             const data = await res.json()
-            console.log(data)
+            
             if (data.Response === "True") {
                 setMovies(data.Search || data)
                 setError({ show: false, msg: '' })

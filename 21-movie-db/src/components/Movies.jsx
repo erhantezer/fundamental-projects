@@ -11,7 +11,6 @@ const Movies = () => {
         return <div className="loading">Loading...</div>
     }
 
-    console.log(movies)
     return (
         <section className="movies">
             {movies.map((movie) => {

@@ -2,10 +2,14 @@ import {Link, useParams} from "react-router-dom";
 import useMovieFetch from "../hooks/useMovieFetch";
 
 
+
 const SingleMovies = () => {
     const {id} = useParams()
-    const {loading, error, movies:movie} = useMovieFetch(`&i=${id}`)
+    const {loading, error, movies: movie} = useMovieFetch(`&i=${id}`)
     
+    
+    console.log(movie)
+
     if (loading) {
         return <div className='loading'></div>
     }
