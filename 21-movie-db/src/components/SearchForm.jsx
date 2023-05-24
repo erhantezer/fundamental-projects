@@ -1,12 +1,18 @@
+import { useState } from "react";
 import useMovieFetch from "../hooks/useMovieFetch"
 
 
 const SearchForm = () => {
-    const { query, setQuery, error } = useMovieFetch()
+    const [query, setQuery] = useState("batman");
+    const { error } = useMovieFetch(`&s=${query}`)
 
-    
+    console.log(query)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(query)
+    }
     return (
-        <form className="search-form" onSubmit={(e) => e.preventDefault()}>
+        <form className="search-form" onSubmit={handleSubmit}>
             <h2>search movies</h2>
             <input
                 type="text"

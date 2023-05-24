@@ -1,8 +1,7 @@
 
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import useMovieFetch from "../hooks/useMovieFetch";
 
-const API_ENDPOINT = `https://www.omdbapi.com/?apikey=fcacb142`;
 
 const SingleMovies = () => {
     const {id} = useParams()
