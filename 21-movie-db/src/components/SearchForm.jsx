@@ -1,10 +1,10 @@
-import { useState } from "react";
-import useMovieFetch from "../hooks/useMovieFetch"
+
+import { useGlobalContext } from "../context";
 
 
 const SearchForm = () => {
-    const [query, setQuery] = useState("batman");
-    const { error } = useMovieFetch(`&s=${query}`)
+    const {query, setQuery, error} = useGlobalContext()
+    
 
     console.log(query)
     const handleSubmit = (e) => {

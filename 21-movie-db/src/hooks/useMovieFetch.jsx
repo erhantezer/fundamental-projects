@@ -11,7 +11,7 @@ const useMovieFetch = (urlParams) => {
 
     const fetchMovie = async (url) => {
         setLoading(true)
-
+        console.log(url)
         try {
             const res = await fetch(url)
             const data = await res.json()
