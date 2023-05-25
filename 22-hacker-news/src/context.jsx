@@ -1,4 +1,5 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import { SET_LOADING } from "./actions";
 
 
 const AppContext = createContext();
@@ -21,6 +22,19 @@ const initialState = {
 
 export const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
+
+    const fetchStories = () => {
+        dispatch({ type: SET_LOADING })
+        try {
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchStories()
+    }, []);
 
     return (
         <AppContext.Provider>
