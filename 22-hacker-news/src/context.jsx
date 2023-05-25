@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { SET_LOADING } from "./actions";
+import reducer from "./reducer";
 
 
 const AppContext = createContext();
@@ -23,10 +24,12 @@ const initialState = {
 export const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const fetchStories = () => {
+    const fetchStories = async (url) => {
         dispatch({ type: SET_LOADING })
         try {
-
+            const res = await fetch(API_ENDPOINT);
+            const data = await res.json()
+            console.log(data)
         } catch (error) {
             console.log(error)
         }
@@ -37,7 +40,7 @@ export const AppProvider = ({ children }) => {
     }, []);
 
     return (
-        <AppContext.Provider>
+        <AppContext.Provider value={{}}>
             {children}
         </AppContext.Provider>
     )

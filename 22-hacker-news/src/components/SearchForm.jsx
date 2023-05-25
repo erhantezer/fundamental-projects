@@ -18,7 +18,7 @@ const SearchForm = () => {
             <input
                 type="text"
                 className="form-input"
-                value={}
+                value={null}
                 onChange={handleChange}
             />
         </form>
