@@ -2,7 +2,17 @@
 
 const Buttons = () => {
     return (
-        <div>Buttons</div>
+        <div className='btn-container'>
+            <button disabled={null}>
+                prev
+            </button>
+            <p>
+                
+            </p>
+            <button disabled={null} >
+                next
+            </button>
+        </div>
     )
 }
 
