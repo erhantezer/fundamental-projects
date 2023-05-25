@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 
 const AppContext = createContext();
@@ -20,7 +20,7 @@ const initialState = {
 
 
 export const AppProvider = ({ children }) => {
-    
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
         <AppContext.Provider>
