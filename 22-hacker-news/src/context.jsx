@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { SET_LOADING } from "./actions";
+import { HANDLE_PAGE, HANDLE_SEARCH, REMOVE_STORY, SET_LOADING, SET_STORIES } from "./actions";
 import reducer from "./reducer";
 
 
@@ -30,6 +30,7 @@ export const AppProvider = ({ children }) => {
             const res = await fetch(API_ENDPOINT);
             const data = await res.json()
             console.log(data)
+            dispatch({ type: SET_STORIES, payload: {} })
         } catch (error) {
             console.log(error)
         }
@@ -39,8 +40,26 @@ export const AppProvider = ({ children }) => {
         fetchStories()
     }, []);
 
+
+    const removeStory = (id) => {
+        dispatch({ type: REMOVE_STORY, payload: id })
+    }
+
+    const handleSearch = (query) => {
+        dispatch({ type: HANDLE_SEARCH, payload: query })
+    }
+
+    const handlePage = (value) => {
+        dispatch({ type: HANDLE_PAGE, payload: value })
+    }
+
     return (
-        <AppContext.Provider value={{}}>
+        <AppContext.Provider value={{
+            ...state,
+            removeStory,
+            handleSearch,
+            handlePage
+        }}>
             {children}
         </AppContext.Provider>
     )
