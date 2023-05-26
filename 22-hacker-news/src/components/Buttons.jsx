@@ -1,19 +1,22 @@
+import { useGlobalContext } from "../context"
 
 
 const Buttons = () => {
+const {isLoading, page, nbPages, handlePage} = useGlobalContext()
+
     return (
         <div className='btn-container'>
-            <button disabled={null}>
+            <button disabled={isLoading} onClick={() => handlePage('dec')}>
                 prev
             </button>
             <p>
-                
+                {page + 1} of {nbPages}
             </p>
-            <button disabled={null} >
+            <button disabled={isLoading} onClick={() => handlePage('inc')} >
                 next
             </button>
         </div>
     )
 }
 
-export default Buttons
+export default Buttons;
