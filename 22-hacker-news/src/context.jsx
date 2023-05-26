@@ -37,7 +37,7 @@ export const AppProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        fetchStories()
+        fetchStories(`${API_ENDPOINT}query=${state.query}&page=${state.page}`)
     }, []);
 
 
