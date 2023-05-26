@@ -1,15 +1,16 @@
+import { useGlobalContext } from "../context"
 
 
 
 const SearchForm = () => {
-    
+    const {query, handleSearch} = useGlobalContext()
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
 
     const handleChange = (e) => {
-        
+        handleSearch(e.target.value)
     }
 
     return (
@@ -18,7 +19,7 @@ const SearchForm = () => {
             <input
                 type="text"
                 className="form-input"
-                value={null}
+                value={query}
                 onChange={handleChange}
             />
         </form>
