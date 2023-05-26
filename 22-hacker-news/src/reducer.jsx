@@ -8,7 +8,6 @@ import {
 } from "./actions";
 
 
-
 const reducer = (state, action) => {
     switch (action.type) {
         case SET_LOADING:
@@ -43,9 +42,9 @@ const reducer = (state, action) => {
                 }
                 return {...state, page: prevPage}
             }
-        
-    
         default:
             throw new Error(`no matching "${action.type}" action type`)
     }
 }
+
+export default reducer
