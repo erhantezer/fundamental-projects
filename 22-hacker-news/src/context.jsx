@@ -30,7 +30,7 @@ export const AppProvider = ({ children }) => {
             const res = await fetch(API_ENDPOINT);
             const data = await res.json()
             console.log(data)
-            dispatch({ type: SET_STORIES, payload: {} })
+            dispatch({ type: SET_STORIES, payload: { hits: data.hits, nbPages: data.nbPages } })
         } catch (error) {
             console.log(error)
         }
