@@ -25,7 +25,7 @@ const reducer = (state, action) => {
                 hits: state.hits.filter((story) => story.objectID !== action.payload)
             }
         case HANDLE_SEARCH:
-            return {...state, query: action.paload}
+            return {...state, query: action.paload, page:0}
         case HANDLE_PAGE:
             if(action.payload === 'inc'){
                 let nextPage = state.page + 1 

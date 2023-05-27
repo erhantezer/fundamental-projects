@@ -9,9 +9,7 @@ const SearchForm = () => {
         e.preventDefault()
     }
 
-    const handleChange = (e) => {
-        handleSearch(e.target.value)
-    }
+    
 
     return (
         <form className="search-form" onSubmit={handleSubmit}>
@@ -20,7 +18,7 @@ const SearchForm = () => {
                 type="text"
                 className="form-input"
                 value={query}
-                onChange={handleChange}
+                onChange={(e) => handleSearch(e.target.value)}
             />
         </form>
     )
