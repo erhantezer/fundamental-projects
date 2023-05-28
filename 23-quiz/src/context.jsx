@@ -25,12 +25,15 @@ export const AppProvider = ({ children }) => {
     const [waiting, setWaiting] = useState(true);
     const [error, setError] = useState(false);
 
+
+    const fetchQuestions = () => {}
+
     return (
         <AppContext.Provider value={{
             loading,
             waiting,
             error,
-            
+
         }}>
             {children}
         </AppContext.Provider>
