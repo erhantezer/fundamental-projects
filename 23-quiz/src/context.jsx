@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext, useState } from "react"
 
 
 const AppContext = createContext()
@@ -21,9 +21,17 @@ const tempUrl =
     'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
 
 export const AppProvider = ({ children }) => {
+    const [loading, setLoading] = useState(false);
+    const [waiting, setWaiting] = useState(true);
+    const [error, setError] = useState(false);
 
     return (
-        <AppContext.Provider value={{}}>
+        <AppContext.Provider value={{
+            loading,
+            waiting,
+            error,
+            
+        }}>
             {children}
         </AppContext.Provider>
     )
