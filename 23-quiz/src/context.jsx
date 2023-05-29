@@ -53,12 +53,25 @@ export const AppProvider = ({ children }) => {
         
         fetchQuestions()
     }, []);
+
+
+
+    const openModal = () => {
+        setIsModalOpen(true)
+    }
+    const closeModal = () => {
+        setIsModalOpen(false)
+    }
+
     return (
         <AppContext.Provider value={{
             loading,
             waiting,
             error,
-
+            isModalOpen,
+            setIsModalOpen,
+            openModal,
+            closeModal
         }}>
             {children}
         </AppContext.Provider>
