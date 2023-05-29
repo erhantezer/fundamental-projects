@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
-
+import axios from "axios"
 
 const AppContext = createContext()
 
@@ -21,24 +21,37 @@ const tempUrl =
     'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
 
 export const AppProvider = ({ children }) => {
+    const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(false);
     const [waiting, setWaiting] = useState(true);
     const [error, setError] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-    const fetchQuestions = async (url) => {
+    const fetchQuestions = async () => {
         setLoading(true)
+        setWaiting(false)
         try {
-            const {data} = await axios()
+            const  response  = await axios(tempUrl)
+            const data = response.data.results
+            console.log(data)
+            if (data.length > 0) {
+                setQuestions(data)
+                setLoading(false)
+                setWaiting(false)
+                setError(false)
+            } else {
+                setWaiting(true)
+                setError(true)
+            }
         } catch (error) {
             setError(true)
         }
     }
 
     useEffect(() => {
-        const url = null
-        fetchQuestions(url)
+        
+        fetchQuestions()
     }, []);
     return (
         <AppContext.Provider value={{
