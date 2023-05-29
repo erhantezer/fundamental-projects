@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 
 
 const AppContext = createContext()
@@ -24,10 +24,22 @@ export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [waiting, setWaiting] = useState(true);
     const [error, setError] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-    const fetchQuestions = () => {}
+    const fetchQuestions = async (url) => {
+        setLoading(true)
+        try {
+            const {data} = await axios()
+        } catch (error) {
+            setError(true)
+        }
+    }
 
+    useEffect(() => {
+        const url = null
+        fetchQuestions(url)
+    }, []);
     return (
         <AppContext.Provider value={{
             loading,
