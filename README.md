@@ -14,7 +14,7 @@
 
 8️⃣ form, parsInt, slice yöntemleri
 
-9️⃣
+9️⃣ renk için value.js package, navigator.clipboard.writeText(hexValue) //! kopyalama işlemi yapar
 
 1️⃣0️⃣
 
