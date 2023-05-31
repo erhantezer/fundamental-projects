@@ -1,8 +1,9 @@
 
+import Modal from './components/Modal'
 import { useGlobalContext } from './context'
-import SetupForm from './SetupForm'
-import Loading from './Loading'
-import Modal from './Modal'
+import Loading from './pages/Loading'
+import SetupForm from './pages/SetupForm'
+
 
 function App() {
   const {

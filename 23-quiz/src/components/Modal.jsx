@@ -1,5 +1,5 @@
 
-import { useGlobalContext } from './context'
+import { useGlobalContext } from '../context'
 
 const Modal = () => {
     const { isModalOpen, closeModal, correct, questions } = useGlobalContext()
