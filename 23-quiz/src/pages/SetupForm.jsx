@@ -1,4 +1,3 @@
-
 import { useGlobalContext } from '../context'
 
 const SetupForm = () => {
