@@ -16,9 +16,9 @@
 
 9️⃣ renk için value.js package, navigator.clipboard.writeText(hexValue) //! kopyalama işlemi yapar
 
-1️⃣0️⃣
+1️⃣0️⃣ setTimeOut, clearTimeOut, localStorage, setItem, getItem, parse, stringfy 
 
-1️⃣1️⃣
+1️⃣1️⃣ data navbar, useRef, current.getBoundingClientRect(), show(true, false)
 
 1️⃣2️⃣
 
