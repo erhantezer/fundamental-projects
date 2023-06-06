@@ -22,7 +22,7 @@
 
 1️⃣2️⃣ openSidebar, closeSidebar, openModal, closeModal
 
-1️⃣3️⃣
+1️⃣3️⃣ aşağı açılan (submenu) ve sidebar menü
 
 1️⃣4️⃣
 
