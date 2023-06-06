@@ -20,7 +20,7 @@
 
 1️⃣1️⃣ data navbar, useRef, current.getBoundingClientRect(), show(true, false)
 
-1️⃣2️⃣
+1️⃣2️⃣ openSidebar, closeSidebar, openModal, closeModal
 
 1️⃣3️⃣
 
