@@ -26,7 +26,7 @@
 
 1️⃣4️⃣ toggle inc dec, reducer
 
-1️⃣5️⃣
+1️⃣5️⃣ context, router, prvateRouter, searchForm, Loading, detail
 
 1️⃣6️⃣
 
