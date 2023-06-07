@@ -28,7 +28,7 @@
 
 1️⃣5️⃣ context, router, prvateRouter, searchForm, Loading, detail
 
-1️⃣6️⃣  "react-markdown" indirilip yazdığımız github için çevirme yapar
+1️⃣6️⃣  "react-markdown" indirilip yazdığımız github için çevirme yapar.
 
 1️⃣7️⃣
 
