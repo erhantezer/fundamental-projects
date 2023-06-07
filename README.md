@@ -24,7 +24,7 @@
 
 1️⃣3️⃣ aşağı açılan (submenu) ve sidebar menü,  coordinate
 
-1️⃣4️⃣
+1️⃣4️⃣ toggle inc dec, reducer
 
 1️⃣5️⃣
 
