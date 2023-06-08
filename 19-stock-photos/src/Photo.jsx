@@ -11,6 +11,8 @@ const Photo = ({
         location,
     }
 }) => {
+
+    
     return (
         <article className='photo'>
             <img className='photo-grid' src={regular} alt={alt_description} />

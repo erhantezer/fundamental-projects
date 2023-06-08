@@ -34,7 +34,7 @@
 
 1️⃣8️⃣ nextPage, prevPage, handlePage, paginate,
 
-1️⃣9️⃣
+1️⃣9️⃣ context, searchURL, query, 
 
 2️⃣0️⃣
 
