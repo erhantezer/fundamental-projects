@@ -36,7 +36,7 @@
 
 1️⃣9️⃣ context, searchURL, query, react-icons, page, loading
 
-2️⃣0️⃣
+2️⃣0️⃣ dark mode, localStorage, setItem, getItem, css dark light mode
 
 2️⃣1️⃣
 
