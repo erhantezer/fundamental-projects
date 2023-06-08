@@ -34,7 +34,7 @@
 
 1️⃣8️⃣ nextPage, prevPage, handlePage, paginate,
 
-1️⃣9️⃣ context, searchURL, query, 
+1️⃣9️⃣ context, searchURL, query, react-icons, page, loading
 
 2️⃣0️⃣
 
