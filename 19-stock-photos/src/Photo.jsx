@@ -1,5 +1,3 @@
-
-
 const Photo = ({
     urls: { regular },
     alt_description,
