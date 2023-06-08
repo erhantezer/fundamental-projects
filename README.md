@@ -32,7 +32,7 @@
 
 1️⃣7️⃣  random, loading, axios fetchdata
 
-1️⃣8️⃣ nextPage, prevPage, handlePage, paginate
+1️⃣8️⃣ nextPage, prevPage, handlePage, paginate,
 
 1️⃣9️⃣
 
