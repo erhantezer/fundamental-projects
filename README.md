@@ -30,9 +30,9 @@
 
 1️⃣6️⃣  "react-markdown" indirilip yazdığımız github için çevirme yapar.
 
-1️⃣7️⃣
+1️⃣7️⃣  random, loading, axios fetchdata
 
-1️⃣8️⃣
+1️⃣8️⃣ nextPage, prevPage, handlePage, paginate
 
 1️⃣9️⃣
 
