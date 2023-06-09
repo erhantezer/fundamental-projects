@@ -8,10 +8,8 @@ const Stories = () => {
         return <div className='loading'></div>
     }
 
-    console.log(hits.length)
     return (
         <section className='stories'>
-
             {hits.map((story) => {
                 const { objectID, title, num_comments, url, points, author } = story
                 return (
