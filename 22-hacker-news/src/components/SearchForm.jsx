@@ -1,15 +1,11 @@
 import { useGlobalContext } from "../context"
 
-
-
 const SearchForm = () => {
     const {query, handleSearch} = useGlobalContext()
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
-
-    
 
     return (
         <form className="search-form" onSubmit={handleSubmit}>
