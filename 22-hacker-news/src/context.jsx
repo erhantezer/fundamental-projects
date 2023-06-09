@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { HANDLE_PAGE, HANDLE_SEARCH, REMOVE_STORY, SET_LOADING, SET_STORIES } from "./actions";
 import reducer from "./reducer";
 
-
 const AppContext = createContext();
 
 export const useGlobalContext = () => {
@@ -37,7 +36,6 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         fetchStories(`${API_ENDPOINT}query=${state.query}&page=${state.page}`)
     }, []);
-
 
     const removeStory = (id) => {
         dispatch({ type: REMOVE_STORY, payload: id })
